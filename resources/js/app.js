@@ -51,6 +51,8 @@ let routes = [
     { path: '/catpublicaciones', name: 'catpublicaciones', component: require('./components/catalogos/catPubs.vue').default },
     { path: '/tiposautor', name: 'tiposautor', component: require('./components/catalogos/catTipoAutores.vue').default },
     { path: '/asociaatrs', name: 'asociaatrs', component: require('./components/catalogos/asociaAtr.vue').default },
+    { path: '/verautores', name: 'verautores', component: require('./components/autores/verAutores.vue').default },
+    { path: '/verautor/:id', name: 'verautor', component: require('./components/autores/adminAutor.vue').default },
     
 
 ];

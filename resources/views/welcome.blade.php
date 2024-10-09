@@ -13,6 +13,11 @@
          <script src="{{ asset('js/app.js') }}" defer></script>
          <link href="{{ asset('css/app.css') }}" rel="stylesheet">
           <script src="https://kit.fontawesome.com/e813ff6fee.js" crossorigin="anonymous"></script>
+
+          <!-- Agregar en la sección <head> -->
+<link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
     
          <script>
             @auth

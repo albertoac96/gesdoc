@@ -161,6 +161,12 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/baja', [App\Http\Controllers\contacto\solicitudesController::class, 'bajaAtr']);
     });
 
+    Route::group(['prefix' => 'autores'], function(){
+        Route::get('/show', [App\Http\Controllers\Catalogos\autoresController::class, 'showAutores']);
+        Route::post('/edit', [App\Http\Controllers\Catalogos\autoresController::class, 'showAutores']);
+        Route::post('/baja', [App\Http\Controllers\Catalogos\autoresController::class, 'showAutores']);
+    });
+
 
 
 });

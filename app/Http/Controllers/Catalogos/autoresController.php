@@ -68,4 +68,9 @@ class autoresController extends Controller
         ]);
        
     }
+
+    public function showAutores(){
+        $LcResp = catAutores::all();
+        return $LcResp;
+    }
 }
