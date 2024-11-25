@@ -25,6 +25,15 @@ export default new Vuex.Store({
         },
         overlay: false,
         iNewCarpeta: 0,
+        red: {
+            nodes: [],
+            links:[],
+            item: null
+        },
+        evento: {
+            id: "",
+            cve: ""
+        }
     },
     getters: {
         UploadProgressArchivos: state => state.UploadProgress.infoArchivos

@@ -53,6 +53,11 @@ let routes = [
     { path: '/asociaatrs', name: 'asociaatrs', component: require('./components/catalogos/asociaAtr.vue').default },
     { path: '/verautores', name: 'verautores', component: require('./components/autores/verAutores.vue').default },
     { path: '/verautor/:id', name: 'verautor', component: require('./components/autores/adminAutor.vue').default },
+
+    { path: '/entidades', name: 'entidades', component: require('./components/catalogos/cidoc/entidades.vue').default },
+    { path: '/props', name: 'props', component: require('./components/catalogos/cidoc/props.vue').default },
+    { path: '/relaciones', name: 'relaciones', component: require('./components/catalogos/cidoc/relaciones.vue').default },
+    
     
 
 ];

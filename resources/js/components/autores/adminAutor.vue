@@ -6,11 +6,7 @@
     dark
     v-model="tab"
   >
-    <v-tab>
-      Info
-      
-   
-    </v-tab>
+    
     <v-tab>
       Red
     </v-tab>
@@ -21,14 +17,7 @@
 
 
   <v-tabs-items v-model="tab">
-      <v-tab-item>
-        <v-card
-          color="basil"
-          flat
-        >
-          <v-card-text>{{$route.params.id}}</v-card-text>
-        </v-card>
-      </v-tab-item>
+     
 
       <v-tab-item>
         <red></red>
@@ -53,6 +42,7 @@ export default {
     },
     data: () => ({
         tab: null,
+        idAutor: 0
 
     }),
     mounted(){
@@ -72,7 +62,8 @@ export default {
     },
     methods:{
         initialize(){
-
+          this.idAutor = this.$route.params.id;
+          console.log(this.idAutor);
         }
     }
 }

@@ -167,6 +167,40 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/baja', [App\Http\Controllers\Catalogos\autoresController::class, 'showAutores']);
     });
 
+    Route::group(['prefix' => 'eventos'], function(){
+        Route::get('/autor/{id}', [App\Http\Controllers\eventosController::class, 'verEventosDeAutor']);
+        Route::get('/autorunico/{id}', [App\Http\Controllers\eventosController::class, 'eventosDeAutorShow']);
+        Route::get('/tipos', [App\Http\Controllers\eventosController::class, 'tiposEventos']);
+        Route::get('/sugerencias', [App\Http\Controllers\eventosController::class, 'verSugerencias']);
+        Route::post('/new', [App\Http\Controllers\eventosController::class, 'guardarEvento']);
+        Route::get('/delevento/{id}', [App\Http\Controllers\eventosController::class, 'verEventosDe']);
+        Route::get('/info/{id}', [App\Http\Controllers\eventosController::class, 'infoDelEvento']);
+        Route::post('/savered', [App\Http\Controllers\eventosController::class, 'guardarRed']);
+        Route::get('/actores/{id}', [App\Http\Controllers\eventosController::class, 'traeActoresDe']);
+        Route::get('/nodo/{id}', [App\Http\Controllers\eventosController::class, 'traeNodo']);
+    });
+
+
+    Route::group(['prefix' => 'cidoc'], function(){
+        Route::group(['prefix' => 'entidad'], function(){
+            Route::get('/show', [App\Http\Controllers\Catalogos\Cidoc\entidadController::class, 'showEntidad']);
+            Route::post('/edit', [App\Http\Controllers\Catalogos\Cidoc\entidadController::class, 'editEntidad']);
+            Route::post('/baja', [App\Http\Controllers\Catalogos\Cidoc\entidadController::class, 'bajaEntidad']);
+        });
+        Route::group(['prefix' => 'propiedad'], function(){
+            Route::get('/show', [App\Http\Controllers\Catalogos\Cidoc\propiedadController::class, 'showPropiedad']);
+            Route::post('/edit', [App\Http\Controllers\Catalogos\Cidoc\propiedadController::class, 'editPropiedad']);
+            Route::post('/baja', [App\Http\Controllers\Catalogos\Cidoc\propiedadController::class, 'bajaPropiedad']);
+        });
+        Route::group(['prefix' => 'relacion'], function(){
+            Route::get('/show', [App\Http\Controllers\Catalogos\Cidoc\relacionController::class, 'showRel']);
+            Route::post('/edit', [App\Http\Controllers\Catalogos\Cidoc\relacionController::class, 'editRel']);
+            Route::post('/baja', [App\Http\Controllers\Catalogos\Cidoc\relacionController::class, 'bajaRel']);
+        });
+    });
+
+    
+
 
 
 });
