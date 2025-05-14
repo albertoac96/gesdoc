@@ -57,6 +57,10 @@ let routes = [
     { path: '/entidades', name: 'entidades', component: require('./components/catalogos/cidoc/entidades.vue').default },
     { path: '/props', name: 'props', component: require('./components/catalogos/cidoc/props.vue').default },
     { path: '/relaciones', name: 'relaciones', component: require('./components/catalogos/cidoc/relaciones.vue').default },
+
+    { path: '/verinst', name: 'catinstituciones', component: require('./components/catalogos/cat_Instituciones.vue').default },
+    { path: '/vergrupos', name: 'catgrupos', component: require('./components/catalogos/cat_grupos.vue').default },
+    { path: '/catlugares', name: 'catlugares', component: require('./components/catalogos/cat_lugares.vue').default },
     
     
 

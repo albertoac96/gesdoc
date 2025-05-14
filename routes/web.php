@@ -167,6 +167,24 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/baja', [App\Http\Controllers\Catalogos\autoresController::class, 'showAutores']);
     });
 
+    Route::group(['prefix' => 'institucion'], function(){
+        Route::get('/list', [App\Http\Controllers\Catalogos\InstitucionController::class, 'index']);
+        Route::post('/nueva', [App\Http\Controllers\Catalogos\InstitucionController::class, 'store']);
+        Route::get('/eliminar/{id}', [App\Http\Controllers\Catalogos\InstitucionController::class, 'destroy']);
+    });
+
+    Route::group(['prefix' => 'grupos'], function(){
+        Route::get('/list', [App\Http\Controllers\Catalogos\grupoController::class, 'index']);
+        Route::post('/nueva', [App\Http\Controllers\Catalogos\grupoController::class, 'store']);
+        Route::get('/eliminar/{id}', [App\Http\Controllers\Catalogos\grupoController::class, 'destroy']);
+    });
+
+    Route::group(['prefix' => 'lugares'], function(){
+        Route::get('/list', [App\Http\Controllers\Catalogos\lugarController::class, 'index']);
+        Route::post('/nueva', [App\Http\Controllers\Catalogos\lugarController::class, 'store']);
+        Route::get('/eliminar/{id}', [App\Http\Controllers\Catalogos\lugarController::class, 'destroy']);
+    });
+
     Route::group(['prefix' => 'eventos'], function(){
         Route::get('/autor/{id}', [App\Http\Controllers\eventosController::class, 'verEventosDeAutor']);
         Route::get('/autorunico/{id}', [App\Http\Controllers\eventosController::class, 'eventosDeAutorShow']);
@@ -178,6 +196,12 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/savered', [App\Http\Controllers\eventosController::class, 'guardarRed']);
         Route::get('/actores/{id}', [App\Http\Controllers\eventosController::class, 'traeActoresDe']);
         Route::get('/nodo/{id}', [App\Http\Controllers\eventosController::class, 'traeNodo']);
+
+        Route::get('/list/{idAutor}', [App\Http\Controllers\Catalogos\eventoController::class, 'index']);
+        Route::post('/nuevo', [App\Http\Controllers\Catalogos\eventoController::class, 'store']);
+        Route::get('/eliminar/{idEvento}', [App\Http\Controllers\Catalogos\eventoController::class, 'destroy']);
+        Route::get('/actoresde/{idTipo}', [App\Http\Controllers\Catalogos\eventoController::class, 'traeActoresDe']);
+        Route::get('/deactor/{idActor}/{idTipo}', [App\Http\Controllers\Catalogos\eventoController::class, 'index']);
     });
 
 

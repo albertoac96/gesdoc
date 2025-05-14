@@ -6,7 +6,9 @@
     dark
     v-model="tab"
   >
-    
+    <v-tab>
+      Eventos
+    </v-tab>
     <v-tab>
       Red
     </v-tab>
@@ -17,13 +19,15 @@
 
 
   <v-tabs-items v-model="tab">
-     
+     <v-tab-item>
+        <info></info>
+      </v-tab-item>
 
       <v-tab-item>
-        <red></red>
+        <grafo :eventos="$store.state.eventos" :idPrincipal="$route.params.id" nombrePrincipal="MOM"></grafo>
       </v-tab-item>
       <v-tab-item>
-        <timeline></timeline>
+        <linea :eventos="$store.state.eventos"></linea>
       </v-tab-item>
     </v-tabs-items>
 
@@ -33,12 +37,14 @@
 <script>
 import info from './admin/info.vue';
 import red from './admin/red.vue';
+import grafo from './admin/grafo.vue';
 import timeline from './admin/timeline.vue';
+import linea from './admin/linea_tiempo.vue';
 export default {
     name: "adminAutor",
     props: [],
     components:{
-        info, red, timeline
+        info, red, timeline, grafo, linea
     },
     data: () => ({
         tab: null,
